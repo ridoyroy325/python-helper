@@ -11,10 +11,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'public/static')
 MEDIA_URL = '/media/'
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+######## Python URL Petern
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+if settings.DEBUG:
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+
+
+
 
 
 AUTH_USER_MODEL = "users.CustomUser"
+
